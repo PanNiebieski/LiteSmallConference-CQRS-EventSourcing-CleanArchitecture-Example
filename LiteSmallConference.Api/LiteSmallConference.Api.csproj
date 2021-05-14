@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LiteSmallConference.Application.CQRS\LiteSmallConference.Application.CQRS.csproj" />
+    <ProjectReference Include="..\LiteSmallConference.Persitence.Dapper\LiteSmallConference.Persitence.Dapper.SQLite.csproj" />
+  </ItemGroup>
+
+</Project>
