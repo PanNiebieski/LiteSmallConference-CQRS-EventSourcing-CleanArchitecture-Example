@@ -29,6 +29,7 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
         public async Task<DeveloperIds> Run(Developer dev)
         {
             var temp = _mapper.Map<DevloperTemp>(dev);
+            temp.Status = 0;
 
             using var connection = new SQLiteConnection
                                         (_geekLemonContext.ConnectionString);
@@ -36,6 +37,7 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
             var q = @"INSERT INTO Developers  (Name, UniqueId, Status) 
                 VALUES (@Name, @UniqueId, @Status);
                 SELECT seq From sqlite_sequence Where Name='Developers';";
+
 
 
             try

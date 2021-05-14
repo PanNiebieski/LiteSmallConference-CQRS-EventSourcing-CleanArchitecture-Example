@@ -27,19 +27,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.Persite
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Persitence.EF.SQLite", "LiteSmallConference.Persitence.EF.SQLite\LiteSmallConference.Persitence.EF.SQLite.csproj", "{4E2EF736-24D8-4892-88AF-71334716852C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Api", "LiteSmallConference.Api\LiteSmallConference.Api.csproj", "{990388B5-8553-41DB-9461-B73ABD7FBA80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.Api", "LiteSmallConference.Api\LiteSmallConference.Api.csproj", "{990388B5-8553-41DB-9461-B73ABD7FBA80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.DomainEvents", "LiteSmallConference.DomainEvents\LiteSmallConference.DomainEvents.csproj", "{A094A7E2-BE52-484F-8200-56334FCED3F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.DomainEvents", "LiteSmallConference.DomainEvents\LiteSmallConference.DomainEvents.csproj", "{A094A7E2-BE52-484F-8200-56334FCED3F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Application.EventSourcing", "LiteSmallConference.Application.EventSourcing\LiteSmallConference.Application.EventSourcing.csproj", "{618102CA-8747-482F-920F-E9C7169C7A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.Application.EventSourcing", "LiteSmallConference.Application.EventSourcing\LiteSmallConference.Application.EventSourcing.csproj", "{618102CA-8747-482F-920F-E9C7169C7A30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventSourcing", "EventSourcing", "{DA7E0A3C-5E46-4655-8C32-9F212D469307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Infrastructure.EventStoreAndBus", "LiteSmallConference.Infrastructure.EventStoreAndBus\LiteSmallConference.Infrastructure.EventStoreAndBus.csproj", "{A3028B43-2E10-4808-A346-C7C6A140CEAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.Infrastructure.EventStoreAndBus", "LiteSmallConference.Infrastructure.EventStoreAndBus\LiteSmallConference.Infrastructure.EventStoreAndBus.csproj", "{A3028B43-2E10-4808-A346-C7C6A140CEAF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginsEventStores", "PluginsEventStores", "{F2A6A85D-2CF1-4E3C-B2D8-D17BFA6C1D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Infrastructure.EventStorePlugin.SQLite", "LiteSmallConference.Infrastructure.EventStorePlugin.SQLite\LiteSmallConference.Infrastructure.EventStorePlugin.SQLite.csproj", "{D6579FAA-B110-46C0-8A2D-540CA2FB3652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteSmallConference.Infrastructure.EventStorePlugin.SQLite", "LiteSmallConference.Infrastructure.EventStorePlugin.SQLite\LiteSmallConference.Infrastructure.EventStorePlugin.SQLite.csproj", "{D6579FAA-B110-46C0-8A2D-540CA2FB3652}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8247D64F-974A-45A8-8483-5F8F3685FB4A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundEventHandlerServer", "BackgroundEventHandlerServer", "{80B21ACC-B536-43A8-BECB-8924E8B3CB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteSmallConference.Infrastructure.BackgroundEventHandlersServer", "LiteSmallConference.Infrastructure.BackgroundEventHandlersServer\LiteSmallConference.Infrastructure.BackgroundEventHandlersServer.csproj", "{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +100,10 @@ Global
 		{D6579FAA-B110-46C0-8A2D-540CA2FB3652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6579FAA-B110-46C0-8A2D-540CA2FB3652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6579FAA-B110-46C0-8A2D-540CA2FB3652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +127,8 @@ Global
 		{A3028B43-2E10-4808-A346-C7C6A140CEAF} = {DA7E0A3C-5E46-4655-8C32-9F212D469307}
 		{F2A6A85D-2CF1-4E3C-B2D8-D17BFA6C1D67} = {DA7E0A3C-5E46-4655-8C32-9F212D469307}
 		{D6579FAA-B110-46C0-8A2D-540CA2FB3652} = {F2A6A85D-2CF1-4E3C-B2D8-D17BFA6C1D67}
+		{80B21ACC-B536-43A8-BECB-8924E8B3CB1D} = {D668D7B7-F7AE-4561-A063-20D40F500D61}
+		{97EE8DDD-5B4E-4B0A-A6B8-41CF2D6B871D} = {80B21ACC-B536-43A8-BECB-8924E8B3CB1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E91800FF-5F7E-439F-9523-1B7E197E99E2}
