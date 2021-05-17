@@ -26,21 +26,18 @@ namespace LiteSmallConference.Infrastructure.BackgroundEventHandlersServer.Subsc
 
         public override DomainEvent DeserializeObject(string json)
         {
-            return JsonConvert.DeserializeObject<DevloperSubmitedEvent>(json);
+            return JsonConvert.DeserializeObject<DeveloperAcceptedEvent>(json);
         }
 
         public override async Task<ExecutionStatus> HandleEvent(DomainEvent @event)
         {
-            DeveloperRejectedEvent developerEvent = @event as DeveloperRejectedEvent;
+            DeveloperAcceptedEvent developerEvent = @event as DeveloperAcceptedEvent;
 
             var cfs = _mapper.Map<Developer>(developerEvent);
 
-            _ZEsDeveloperRepository.SaveRejectionAsync(cfs.UniqueId);
+            var status = await _ZEsDeveloperRepository.SaveAcceptenceAsync(cfs.UniqueId);
 
-            //if (execution == null)
-            //    return new ExecutionStatus() { Succes = false };
-
-            return new ExecutionStatus() { Success = true };
+            return new ExecutionStatus() { Success = status };
         }
     }
 }

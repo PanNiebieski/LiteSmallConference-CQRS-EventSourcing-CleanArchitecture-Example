@@ -83,36 +83,7 @@ namespace LiteSmallConference.Api.Controllers
             return Ok(result.List);
         }
 
-        [HttpGet("id/{id}", Name = "GetDeveloperIdEs")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        [ProducesResponseType(420)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesDefaultResponseType]
-        public async Task<ActionResult<DeveloperViewModel>> GetDeveloperId(int id)
-        {
-            var result = await _mediator.Send(
-                (new GetDeveloperQuery()
-                {
-                    DeveloperId = new DeveloperId(id),
-                    queryWitchDataBase = QueryWitchDataBase.WithEventSourcing
-                }));
 
-            if (result.Status == ResponseStatus.BussinesLogicError)
-                return Forbid();
-            if (result.Status == ResponseStatus.NotFoundInDataBase)
-                return NotFound();
-            if (result.Status == ResponseStatus.ValidationError)
-                return BadRequest();
-            if (result.Status == ResponseStatus.BadQuery)
-                return BadRequest();
-            if (!result.Success)
-                return MethodFailure(result.Message);
-
-            return Ok(result.Developer);
-        }
 
         [HttpGet("uniqueid/{uid}", Name = "GetDeveloperByUniqueIdEs")]
         [ProducesResponseType(StatusCodes.Status200OK)]

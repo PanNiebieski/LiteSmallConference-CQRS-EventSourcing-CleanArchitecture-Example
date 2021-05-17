@@ -25,7 +25,7 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
 
 
 
-        public async Task Run(DeveloperUniqueId id)
+        public async Task<bool> Run(DeveloperUniqueId id)
         {
             using var connection = new SQLiteConnection
                                     (_geekLemonContext.ConnectionString);
@@ -45,11 +45,13 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
             }
             catch (Exception ex)
             {
-
+                return false;
             }
+
+            return true;
         }
 
-        public async Task Run(DeveloperId id)
+        public async Task<bool> Run(DeveloperId id)
         {
             using var connection = new SQLiteConnection
                                     (_geekLemonContext.ConnectionString);
@@ -69,8 +71,10 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
             }
             catch (Exception ex)
             {
-
+                return false;
             }
+
+            return true;
         }
     }
 }

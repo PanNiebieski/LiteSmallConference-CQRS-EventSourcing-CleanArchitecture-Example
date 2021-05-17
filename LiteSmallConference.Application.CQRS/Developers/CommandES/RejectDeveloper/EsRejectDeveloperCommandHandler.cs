@@ -43,9 +43,9 @@ namespace LiteSmallConference.Application.CQRS.Developers.CommandES.RejectDevelo
                     ($"Devloper status in eventhistory is {aggregateDevloper.Status}.Can't be Rejected", false));
 
             var developer = _mapper.Map<Developer>(aggregateDevloper);
-            developer.Status = DeveloperStatus.Accepted;
+            developer.Status = DeveloperStatus.Rejected;
 
-            aggregateDevloper.Accepted(developer);
+            aggregateDevloper.Rejected(developer);
             _sessionForEventSourcing.Commit();
 
             return Task.FromResult(new EsRejectDeveloperCommandResponse());

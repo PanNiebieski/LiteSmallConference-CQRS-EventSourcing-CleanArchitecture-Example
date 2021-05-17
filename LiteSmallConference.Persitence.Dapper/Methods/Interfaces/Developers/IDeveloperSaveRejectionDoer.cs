@@ -5,8 +5,8 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Interfaces.Develo
 {
     public interface IDeveloperSaveRejectionDoer : IBeforeDoer
     {
-        Task Run(DeveloperUniqueId id);
+        Task<bool> Run(DeveloperUniqueId id);
 
-        Task Run(DeveloperId id);
+        Task<bool> Run(DeveloperId id);
     }
 }

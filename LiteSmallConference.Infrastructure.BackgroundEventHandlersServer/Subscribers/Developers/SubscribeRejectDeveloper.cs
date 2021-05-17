@@ -34,12 +34,9 @@ namespace LiteSmallConference.Infrastructure.BackgroundEventHandlersServer.Subsc
 
             var cfs = _mapper.Map<Developer>(developerEvent);
 
-            _ZEsDeveloperRepository.SaveRejectionAsync(cfs.UniqueId);
+            var status = await _ZEsDeveloperRepository.SaveRejectionAsync(cfs.UniqueId);
 
-            //if (execution == null)
-            //    return new ExecutionStatus() { Succes = false };
-
-            return new ExecutionStatus() { Success = true };
+            return new ExecutionStatus() { Success = status };
         }
     }
 }

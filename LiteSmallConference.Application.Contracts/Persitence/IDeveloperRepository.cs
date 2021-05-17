@@ -18,13 +18,13 @@ namespace LiteSmallConference.Application.Contracts.Persitence
 
         Task<DeveloperIds> SubmitAsync(Developer callForSpeech);
 
-        Task SaveAcceptenceAsync(DeveloperUniqueId id);
+        Task<bool> SaveAcceptenceAsync(DeveloperUniqueId id);
 
-        Task SaveAcceptenceAsync(DeveloperId id);
+        Task<bool> SaveAcceptenceAsync(DeveloperId id);
 
-        Task SaveRejectionAsync(DeveloperUniqueId id);
+        Task<bool> SaveRejectionAsync(DeveloperUniqueId id);
 
-        Task SaveRejectionAsync(DeveloperId id);
+        Task<bool> SaveRejectionAsync(DeveloperId id);
 
 
 

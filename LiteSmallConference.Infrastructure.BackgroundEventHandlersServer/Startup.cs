@@ -39,9 +39,11 @@ namespace LiteSmallConference.Infrastructure.BackgroundEventHandlersServer
                 Frequency = TimeSpan.FromSeconds(5),
             });
 
+            //dont change the order
+            services.AddTransient<ISubscribeBase, SubscribeSubmitDeveloper>();
             services.AddTransient<ISubscribeBase, SubscribeAcceptDeveloper>();
             services.AddTransient<ISubscribeBase, SubscribeRejectDeveloper>();
-            services.AddTransient<ISubscribeBase, SubscribeSubmitDeveloper>();
+
 
             services.AddTransient<ISubscribeBase[]>
                 (p => p.GetServices<ISubscribeBase>().ToArray());

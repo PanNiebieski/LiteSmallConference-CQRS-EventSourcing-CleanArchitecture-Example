@@ -55,22 +55,22 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Repositories
             return _developerGetAllDoer.Run(filtrer);
         }
 
-        public Task SaveAcceptenceAsync(DeveloperUniqueId id)
+        public Task<bool> SaveAcceptenceAsync(DeveloperUniqueId id)
         {
             return _developerSaveAcceptanceDoer.Run(id);
         }
 
-        public Task SaveAcceptenceAsync(DeveloperId id)
+        public Task<bool> SaveAcceptenceAsync(DeveloperId id)
         {
             return _developerSaveAcceptanceDoer.Run(id);
         }
 
-        public Task SaveRejectionAsync(DeveloperUniqueId id)
+        public Task<bool> SaveRejectionAsync(DeveloperUniqueId id)
         {
             return _developerSaveRejection.Run(id);
         }
 
-        public Task SaveRejectionAsync(DeveloperId id)
+        public Task<bool> SaveRejectionAsync(DeveloperId id)
         {
             return _developerSaveRejection.Run(id);
         }

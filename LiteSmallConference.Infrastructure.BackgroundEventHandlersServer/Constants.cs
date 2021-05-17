@@ -2,8 +2,8 @@
 {
     public class Constants
     {
-        public const string QUEUE_DEVELOPER_SUBMITED = "developers_submited";
-        public const string QUEUE_DEVELOPER_REJECTCED = "developers_rejected";
-        public const string QUEUE_DEVELOPER_ACCEPTED = "developers_accepted";
+        public const string QUEUE_DEVELOPER_SUBMITED = "q1developers_submited";
+        public const string QUEUE_DEVELOPER_REJECTCED = "q2developers_rejected";
+        public const string QUEUE_DEVELOPER_ACCEPTED = "q2developers_accepted";
     }
 }
