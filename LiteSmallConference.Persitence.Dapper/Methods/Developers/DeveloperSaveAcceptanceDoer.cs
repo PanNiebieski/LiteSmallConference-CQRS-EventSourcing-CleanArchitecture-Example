@@ -1,6 +1,8 @@
-﻿using Dapper;
+﻿using AutoMapper;
+using Dapper;
 using LiteSmallConference.Domain.ValueObject;
 using LiteSmallConference.Domain.ValueObjects;
+using LiteSmallConference.Persitence.Dapper.SQLite.Config;
 using LiteSmallConference.Persitence.Dapper.SQLite.Methods.Interfaces.Developers;
 using System;
 using System.Data.SQLite;
@@ -8,8 +10,18 @@ using System.Threading.Tasks;
 
 namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
 {
-    class DeveloperSaveAcceptanceDoer : BeforeDoer, IDeveloperSaveAcceptanceDoer
+    public class DeveloperSaveAcceptanceDoer : BeforeDoer, IDeveloperSaveAcceptanceDoer
     {
+        private readonly IMapper _mapper;
+
+        public DeveloperSaveAcceptanceDoer
+            (ILiteSmallDBContext geekLemonContext,
+            IMapper mapper)
+        {
+            _geekLemonContext = geekLemonContext;
+            _mapper = mapper;
+        }
+
         public async Task Run(DeveloperUniqueId id)
         {
             using var connection = new SQLiteConnection

@@ -67,7 +67,7 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Developers
                 QueryFirstOrDefaultAsync<DevloperTemp>
                 (q, new
                 {
-                    @UniqueId = id.Value,
+                    @UniqueId = id.ValueInString(),
                 });
 
 

@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LiteSmallConference.Application.CQRS\LiteSmallConference.Application.CQRS.csproj" />
+    <ProjectReference Include="..\LiteSmallConference.Infrastructure.EventStoreAndBus\LiteSmallConference.Infrastructure.EventStoreAndBus.csproj" />
+    <ProjectReference Include="..\LiteSmallConference.Infrastructure.EventStorePlugin.SQLite\LiteSmallConference.Infrastructure.EventStorePlugin.SQLite.csproj" />
     <ProjectReference Include="..\LiteSmallConference.Persitence.Dapper\LiteSmallConference.Persitence.Dapper.SQLite.csproj" />
   </ItemGroup>
 

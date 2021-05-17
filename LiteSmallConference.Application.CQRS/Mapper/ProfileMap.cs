@@ -9,9 +9,9 @@ using System;
 
 namespace LiteSmallConference.Application.CQRS.Mapper
 {
-    public class MappingProfile : Profile
+    public class ProfileMap : Profile
     {
-        public MappingProfile()
+        public ProfileMap()
         {
             CreateMap<int, DeveloperId>().ConstructUsing
                 (c => new DeveloperId(c));

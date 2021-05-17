@@ -1,4 +1,6 @@
-﻿namespace LiteSmallConference.Domain.ValueObjects.Identities
+﻿using System.Text.Json.Serialization;
+
+namespace LiteSmallConference.Domain.ValueObjects.Identities
 {
 
 
@@ -7,7 +9,16 @@
         public DeveloperId CreatedId { get; set; }
         public DeveloperUniqueId UniqueId { get; set; }
 
-        public IdsStatus Status { get; set; }
+        [JsonIgnore]
+        public IdsStatus ExStatus { get; set; }
+
+        public string Status
+        {
+            get
+            {
+                return ExStatus.ToString();
+            }
+        }
     }
 
     public enum IdsStatus

@@ -11,11 +11,13 @@ namespace LiteSmallConference.DomainEvents.Developers
 
 
         public DeveloperAcceptedEvent(DeveloperUniqueId uniqueId,
-            string name, DeveloperStatus status)
+            string name, DeveloperStatus status, int version)
         {
             UniqueId = uniqueId;
             Status = status;
             Name = name;
+            Version = version;
+            Key = uniqueId.GetAggregateKey();
         }
     }
 

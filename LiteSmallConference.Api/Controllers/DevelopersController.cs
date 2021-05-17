@@ -16,7 +16,9 @@ using System.Threading.Tasks;
 
 namespace LiteSmallConference.Api.Controllers
 {
-    public class DevelopersController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class DevelopersController : BaseLiteSmallConference
     {
         private readonly IMediator _mediator;
 
@@ -44,6 +46,8 @@ namespace LiteSmallConference.Api.Controllers
                 return BadRequest();
             if (result.Status == ResponseStatus.BadQuery)
                 return BadRequest();
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
             return Ok(result.DeveloperIds);
         }
@@ -73,6 +77,8 @@ namespace LiteSmallConference.Api.Controllers
                 return BadRequest();
             if (result.Status == ResponseStatus.BadQuery)
                 return BadRequest();
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
             return Ok(result.List);
         }
@@ -102,6 +108,8 @@ namespace LiteSmallConference.Api.Controllers
                 return BadRequest();
             if (result.Status == ResponseStatus.BadQuery)
                 return BadRequest();
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
             return Ok(result.Developer);
         }
@@ -122,6 +130,17 @@ namespace LiteSmallConference.Api.Controllers
                     DeveloperUniqueId = new DeveloperUniqueId(uid),
                     queryWitchDataBase = QueryWitchDataBase.NormalCQRS
                 }));
+
+            if (result.Status == ResponseStatus.BussinesLogicError)
+                return Forbid();
+            if (result.Status == ResponseStatus.NotFoundInDataBase)
+                return NotFound();
+            if (result.Status == ResponseStatus.ValidationError)
+                return BadRequest();
+            if (result.Status == ResponseStatus.BadQuery)
+                return BadRequest();
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
             return Ok(result.Developer);
         }
@@ -145,7 +164,8 @@ namespace LiteSmallConference.Api.Controllers
                 return BadRequest();
             if (result.Status == ResponseStatus.BadQuery)
                 return BadRequest();
-
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
             return NoContent();
 
@@ -171,6 +191,8 @@ namespace LiteSmallConference.Api.Controllers
                 return BadRequest();
             if (result.Status == ResponseStatus.BadQuery)
                 return BadRequest();
+            if (!result.Success)
+                return MethodFailure(result.Message);
 
 
             return NoContent();

@@ -15,7 +15,7 @@ namespace GeekLemonConference.Infrastructure.EventStoreAndBus
             return services;
         }
 
-        public static IServiceCollection AddBusAndRepository
+        public static IServiceCollection AddEventSourcing
         (this IServiceCollection services,
         IConfiguration configuration)
         {

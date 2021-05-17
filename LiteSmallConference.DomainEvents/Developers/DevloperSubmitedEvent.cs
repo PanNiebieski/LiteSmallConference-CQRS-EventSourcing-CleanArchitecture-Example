@@ -6,6 +6,7 @@ namespace LiteSmallConference.DomainEvents.Developers
     {
         public DeveloperUniqueId UniqueId { get; set; }
         public string Name { get; set; }
+
         //public DeveloperStatus Status { get; set; }
 
         public DevloperSubmitedEvent(DeveloperUniqueId uniqueId,
@@ -13,6 +14,7 @@ namespace LiteSmallConference.DomainEvents.Developers
         {
             UniqueId = uniqueId;
             Name = name;
+            Key = uniqueId.GetAggregateKey();
         }
     }
 }

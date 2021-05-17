@@ -1,4 +1,6 @@
-﻿using LiteSmallConference.Application.CQRS;
+﻿using GeekLemonConference.Infrastructure.EventStore.SQLite;
+using GeekLemonConference.Infrastructure.EventStoreAndBus;
+using LiteSmallConference.Application.CQRS;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -66,8 +68,8 @@ namespace LiteSmallConference.Api
             services.AddLiteSmallConferenceCQRS(Configuration);
             services.AddPersitenceDapperSQLite(Configuration);
 
-            //services.AddEventStoreSqlLite(Configuration);
-            //services.AddBusAndRepository(Configuration);
+            services.AddEventStoreSqlLite(Configuration);
+            services.AddEventSourcing(Configuration);
 
             services.AddControllers();
             services.AddCors(options =>

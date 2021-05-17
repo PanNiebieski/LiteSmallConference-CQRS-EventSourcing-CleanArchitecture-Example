@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using System;
 
 namespace LiteSmallConference.Application.CQRS.Developers.CommandES.AcceptDeveloper
 {
-    class EsAcceptDeveloperCommand
+    public class EsAcceptDeveloperCommand
+                     : IRequest<EsAcceptDeveloperCommandResponse>
     {
+        public Guid DeveloperUniqueId { get; set; }
+        public int Version { get; set; }
     }
 }

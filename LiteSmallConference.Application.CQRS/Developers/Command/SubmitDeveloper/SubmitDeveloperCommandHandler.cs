@@ -2,9 +2,7 @@
 using LiteSmallConference.Application.Contracts.Persitence;
 using LiteSmallConference.Domain.Entity;
 using LiteSmallConference.Domain.ValueObject;
-using LiteSmallConference.Domain.ValueObjects;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,7 +33,6 @@ namespace LiteSmallConference.Application.CQRS.Developers.Command.SubmitDevelope
 
             var developer = _mapper.Map<Developer>(request);
             developer.Status = DeveloperStatus.New;
-            developer.UniqueId = new DeveloperUniqueId(Guid.NewGuid());
 
             var ids = await _repository.SubmitAsync(developer);
 

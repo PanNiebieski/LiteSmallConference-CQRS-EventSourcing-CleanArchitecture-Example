@@ -47,7 +47,7 @@ namespace GeekLemonConference.Application.EventSourcing.Aggregates
 
 
 
-        public DevloperAggregate(DeveloperRejectedEvent cc)
+        public DevloperAggregate(Developer cc)
         {
             var c = new DevloperSubmitedEvent
                 (cc.UniqueId, cc.Name);
@@ -58,7 +58,7 @@ namespace GeekLemonConference.Application.EventSourcing.Aggregates
         public void Rejected(Developer cc)
         {
             var c = new DeveloperRejectedEvent
-                (cc.UniqueId, cc.Name, cc.Status);
+                (cc.UniqueId, cc.Name, cc.Status, cc.Version);
             this.Key = c.UniqueId.GetAggregateKey();
             ApplyChange(c);
         }
@@ -67,8 +67,8 @@ namespace GeekLemonConference.Application.EventSourcing.Aggregates
 
         public void Accepted(Developer cc)
         {
-            var c = new DeveloperRejectedEvent
-                           (cc.UniqueId, cc.Name, cc.Status);
+            var c = new DeveloperAcceptedEvent
+                           (cc.UniqueId, cc.Name, cc.Status, cc.Version);
             ApplyChange(c);
         }
 

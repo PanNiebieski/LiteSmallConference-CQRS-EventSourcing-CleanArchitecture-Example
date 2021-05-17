@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LiteSmallConference.Application.Contracts.Persitence;
+using LiteSmallConference.Domain.ValueObject;
 using LiteSmallConference.Domain.ValueObjects;
 using MediatR;
 using System.Threading;
@@ -27,8 +28,16 @@ namespace LiteSmallConference.Application.CQRS.Developers.Command.RejectDevelope
             var developerUniqueId = _mapper.Map<DeveloperUniqueId>
                 (request.DeveloperUniqueId);
 
-            await _callRepository.SaveRejectionAsync
-                (developerUniqueId);
+            var developer = await _callRepository.GetByIdAsync(developerUniqueId);
+
+            if (developer.Status == DeveloperStatus.New)
+                await _callRepository.SaveRejectionAsync
+                    (developerUniqueId);
+            else
+            {
+                return new RejectDeveloperCommandResponse("Can't Reject Developer " +
+                    "that is alread " + developer.Status.ToString(), false);
+            }
 
             return new RejectDeveloperCommandResponse();
         }

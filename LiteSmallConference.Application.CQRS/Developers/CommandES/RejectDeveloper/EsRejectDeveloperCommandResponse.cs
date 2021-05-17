@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation.Results;
+using LiteSmallConference.Application.Common;
 
 namespace LiteSmallConference.Application.CQRS.Developers.CommandES.RejectDeveloper
 {
-    class EsRejectDeveloperCommandResponse
+    public class EsRejectDeveloperCommandResponse : BaseResponse
     {
+        public EsRejectDeveloperCommandResponse(ValidationResult validationResult)
+            : base(validationResult)
+        { }
+
+        public EsRejectDeveloperCommandResponse(string message)
+            : base(message)
+        { }
+
+        public EsRejectDeveloperCommandResponse(string message, bool success)
+            : base(message, success)
+        { }
+
+        public EsRejectDeveloperCommandResponse() : base()
+        {
+
+        }
+
+        public EsRejectDeveloperCommandResponse(ResponseStatus status) : base(status)
+        { }
     }
 }

@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LiteSmallConference.Application.Common\LiteSmallConference.Application.Common.csproj" />
     <ProjectReference Include="..\LiteSmallConference.Application.Contracts\LiteSmallConference.Application.Contracts.csproj" />
+    <ProjectReference Include="..\LiteSmallConference.Application.EventSourcing\LiteSmallConference.Application.EventSourcing.csproj" />
     <ProjectReference Include="..\LiteSmallConference.Domain\LiteSmallConference.Domain.csproj" />
   </ItemGroup>
 
