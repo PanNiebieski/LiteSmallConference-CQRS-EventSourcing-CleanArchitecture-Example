@@ -23,7 +23,7 @@ namespace GeekLemonConference.Infrastructure.EventStoreAndBus
 
             AddOption<RabbitMqConfiguration>(services, configuration);
             services.AddScoped<ISessionForEventSourcing, SessionForEventSourcing>();
-            services.AddSingleton<IEventPublisher, GeekLemonEventPublisher>();
+            services.AddSingleton<IEventPublisher, LiteSmallEventPublisher>();
             services.AddScoped<IEventRepository, EventRepository>();
 
             services.AddScoped<IEventRepository, CacheRepository>((services) =>

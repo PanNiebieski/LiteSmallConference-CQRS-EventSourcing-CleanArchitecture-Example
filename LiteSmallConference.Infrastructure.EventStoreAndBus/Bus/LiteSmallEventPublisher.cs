@@ -9,11 +9,11 @@ using System.Text;
 
 namespace GeekLemon.Infrastructure.Write.MongoDB.Bus
 {
-    public class GeekLemonEventPublisher : IEventPublisher
+    public class LiteSmallEventPublisher : IEventPublisher
     {
         private readonly ConnectionFactory connectionFactory;
 
-        public GeekLemonEventPublisher(IHostingEnvironment env/*, AMQPEventSubscriber aMQPEventSubscriber*/)
+        public LiteSmallEventPublisher(IHostingEnvironment env/*, AMQPEventSubscriber aMQPEventSubscriber*/)
         {
             connectionFactory = new ConnectionFactory();
 
