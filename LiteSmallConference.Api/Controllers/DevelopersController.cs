@@ -52,7 +52,7 @@ namespace LiteSmallConference.Api.Controllers
             return Ok(result.DeveloperIds);
         }
 
-        [HttpGet("all/{filter}", Name = "getallcallforspeeches")]
+        [HttpGet("all/{filter}", Name = "getalldevelopers")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -145,16 +145,16 @@ namespace LiteSmallConference.Api.Controllers
             return Ok(result.Developer);
         }
 
-        [HttpPost("reject", Name = "rejectcallforspeech")]
+        [HttpPost("reject", Name = "rejectdevelopers")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(420)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<int>> Reject([FromBody] RejectDeveloperCommand rejectCallForSpeechCommand)
+        public async Task<ActionResult<int>> Reject([FromBody] RejectDeveloperCommand rejectDeveloperCommand)
         {
-            var result = await _mediator.Send(rejectCallForSpeechCommand);
+            var result = await _mediator.Send(rejectDeveloperCommand);
 
             if (result.Status == ResponseStatus.BussinesLogicError)
                 return Forbid();
@@ -172,7 +172,7 @@ namespace LiteSmallConference.Api.Controllers
         }
 
 
-        [HttpPost("accept", Name = "acceptcallforspeech")]
+        [HttpPost("accept", Name = "acceptdevelopers")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

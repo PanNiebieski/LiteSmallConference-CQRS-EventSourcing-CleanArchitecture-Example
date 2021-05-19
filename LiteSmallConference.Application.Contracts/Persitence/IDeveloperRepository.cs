@@ -16,7 +16,7 @@ namespace LiteSmallConference.Application.Contracts.Persitence
         Task<Developer> GetByIdAsync(DeveloperUniqueId id);
 
 
-        Task<DeveloperIds> SubmitAsync(Developer callForSpeech);
+        Task<DeveloperIds> SubmitAsync(Developer Developer);
 
         Task<bool> SaveAcceptenceAsync(DeveloperUniqueId id);
 
@@ -26,7 +26,7 @@ namespace LiteSmallConference.Application.Contracts.Persitence
 
         Task<bool> SaveRejectionAsync(DeveloperId id);
 
-
+        //
 
     }
 

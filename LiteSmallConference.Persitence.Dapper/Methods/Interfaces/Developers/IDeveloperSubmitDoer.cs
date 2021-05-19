@@ -7,6 +7,6 @@ namespace LiteSmallConference.Persitence.Dapper.SQLite.Methods.Interfaces.Develo
     public interface IDeveloperSubmitDoer : IBeforeDoer
     {
         Task<DeveloperIds>
-               Run(Developer callForSpeech);
+               Run(Developer Developer);
     }
 }
